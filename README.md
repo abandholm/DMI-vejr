@@ -2,7 +2,7 @@
 
 Hent aktuelt vejr fra DMI open data: https://opendatadocs.dmi.govcloud.dk/DMIOpenData. Det er jomfruelige data fra vejrstationen, så visse afvigelser vil der være. Ønsker man valideret data (af metrologer), så skal man bruge ”Climate Data”, men de vil være en time gamle.
 
-Det kræver du får en API nøgle og finder nærmeste vejrstation: https://www.dmi.dk/friedata/observationer. Vælg vejrstation og se aflæs StationsID længere nede på siden.
+Der kræves ikke længere API nøgle og du finder nærmeste vejrstation her: https://www.dmi.dk/friedata/observationer. Vælg vejrstation og se aflæs StationsID længere nede på siden.
 
 Hver 10. minut fås disse data, dog er "Vejr" er ikke altid beskrevet og til tider fejlagtig, fx en skyfri himmel med høj sol blev beskrevet med "Tåge" eller 100.
 
@@ -13,7 +13,7 @@ Hver time fås disse data:
 ![image](https://github.com/MaximusClavius/DMI-vejr/assets/103023823/4ad8877c-e155-41fe-bcbb-b3695f440248)
 
 ## Implementering
-Når man har et API-nøgle og fundet relevant StationsID, så skal man gøre følgende i Home Assistant:
+Når man har fundet relevant StationsID, så skal man gøre følgende i Home Assistant:
 1) Lav en "command line sensor", som skal hente data hver 10. minut hos DMI (se filen: command-line)
 2) Lav en "template sensor", som skal fiske relevante data ud af JSON output'tet (se filen: template-sensor)
 3) Lav kort i dashboard. Der er to eksempler her - en på 10. minuts data og en på time data (se filerne: Kort: Aktuel vejr & Kort: Aktuel vejr (seneste time)) 
